@@ -6,42 +6,49 @@ import java.util.Scanner;
 public class strt {
 
 	public static void main(String[] args) {
-	// permutations of an array|
+	//subarrays of a given array|
+	//subarray is every continuous part of an array ex: {1,2,3} --> {2,3}
+	//by definition {} is a subarray of every array,so i will print this in all outputs
 	
-	
-	int v[] = {1,2,3};
-	permut(v,0);
-	
+		
+	//EXEMPLE OF HOW THE CODE WORKS:
+	int v[] = {1,2,3,4};
+	sub_arrays(v);
+
 		
 		
 	}
-	public static void print_array(int[] a){
+	public static void print_array(int [] a){
+		//printing the actual output:
+		System.out.print("{");
 		for(int i = 0;i < a.length;i++) {
-			System.out.print(a[i]);
+			if(a[i] != 0 && i != 0) {
+				System.out.print("," + a[i]);
+			}
+			if(i == 0) {
+				System.out.print(a[i]);
+			}
 		}
-		System.out.println();
+		System.out.print("} ");
 	}
-	public static void swap(int[] a,int x,int y) {
-		int d = a[x];
-		a[x] = a[y];
-		a[y] = d;
-	}
-	public static void permut(int a[],int x){
-		//The logic is to fix an element of the array an then get the permutations of the rest of the array
+	public static void sub_arrays(int[] a){
+		//printing {} by default
+		System.out.print("{}" + " ");
 		
-		if(x == a.length-1) {
-			print_array(a);
-			return;
+		
+		//the code to get all the subarrays 
+		for(int i = 0;i < a.length;i++){
+			int[] v = new int[a.length];
+			int k = 0;
+			for(int j = i;j < a.length;j++){
+                v[k] = a[j];	   
+                k++;
+                print_array(v);
+				
+			}
 		}
-		
-		for(int i = x;i < a.length;i++) {
-			swap(a,x,i);//swap the fixed element with the ith element of the array
-			permut(a,x+1);
-			swap(a,x,i);//reset the array for the next swaps
-		}
-		
-		
 	}
+	
 
 	
 	}
