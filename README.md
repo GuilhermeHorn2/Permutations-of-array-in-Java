@@ -1,1 +1,1 @@
-# Permutations-of-array-in-Java
+# Subarrays-of-an-array-in-Java
