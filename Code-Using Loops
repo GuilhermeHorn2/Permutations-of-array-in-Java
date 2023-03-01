@@ -1,4 +1,4 @@
-package project1;
+ppackage project1;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -12,17 +12,17 @@ public class strt {
 	
 		
 	//EXEMPLE OF HOW THE CODE WORKS:
-	int v[] = {1,2,3,4};
+	int v[] = {1,2,3,0,4};
 	sub_arrays(v);
 
 		
 		
 	}
-	public static void print_array(int [] a){
+	public static void print_array(int [] a,int k){
 		//printing the actual output:
 		System.out.print("{");
-		for(int i = 0;i < a.length;i++) {
-			if(a[i] != 0 && i != 0) {
+		for(int i = 0;i < k;i++) {
+			if(/*a[i] != 0 && */i != 0) {
 				System.out.print("," + a[i]);
 			}
 			if(i == 0) {
@@ -43,7 +43,7 @@ public class strt {
 			for(int j = i;j < a.length;j++){
                 v[k] = a[j];	   
                 k++;
-                print_array(v);
+                print_array(v,k);
 				
 			}
 		}
@@ -52,4 +52,3 @@ public class strt {
 
 	
 	}
-	
